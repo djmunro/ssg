@@ -1,0 +1,32 @@
+//templates/post.pug
+- var thisYear = (new Date()).getFullYear();
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name='description', content=description)
+    style
+      include style.css
+    
+  body
+    div(class="container")
+      div(class="page-title")
+        h2 davidmunro.com
+      header
+        h1= title
+      div(class="navigation")
+        ul(class="navbar")
+          li
+            a(href="#home") Home
+          li
+            a(href="#news") News
+          li
+            a(href="#contact") Contact
+          li
+            a(href="#about") About
+      article
+        | !{content}
+
+    div(class="footer") &copy; #{author} #{thisYear}

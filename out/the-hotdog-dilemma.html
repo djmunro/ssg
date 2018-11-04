@@ -1,0 +1,128 @@
+<!--templates/post.pug--><!DOCTYPE html><html lang="en"><head><title>thoughts on refactoring</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="How to build simple algorithms"><style>* {
+	box-sizing: border-box;
+}
+html, input {
+    font-family: "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+html, body {
+	padding: 0;
+	margin: 1em;
+	height: 100%;
+}
+
+body {
+	line-height: 1.6;
+	color: #3a3a3a;
+}
+
+header {
+	margin-bottom: 1em;
+}
+h1, h2, h3 {
+	margin: 0;
+	font-weight: normal;
+}
+h1 {
+	font-size: 3.375rem;
+	text-transform: lowercase;
+}
+h2 {
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+article h3 {
+  font-size: 1.75rem;
+}
+p {
+  /* line-height: 1.4em; */
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+}
+
+.navbar {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar li a {
+  display: block;
+  color: #3a3a3a;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+.navbar li a:hover {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.title {
+  grid-area: title;
+}
+
+header {
+  grid-area: header;
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+article {
+  grid-area: article;
+}
+
+.footer {
+  grid-area: footer;
+  height: 30px;
+  display: flex;
+  justify-content:center;
+  flex-direction:column; /* column | row */
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-areas: 
+  "title title"
+  "header header"
+  "article article"
+  "navigation navigation"
+  "footer footer";
+  grid-gap: 4px;
+  padding: 0 8px 0 8px;
+}
+
+
+/* @media screen and (min-width: 736px) { */
+@media screen and (min-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". title title ."
+    ". header header ."
+    ". sidebar article ."
+    ". footer footer .";
+  }
+}</style></head><body><div class="container"><div class="page-title"><h2>davidmunro.com</h2></div><header><h1>thoughts on refactoring</h1></header><div class="navigation"><ul class="navbar"><li><a href="#home">Home</a></li><li><a href="#news">News</a></li><li><a href="#contact">Contact</a></li><li><a href="#about">About</a></li></ul></div><article><h3>Catnip</h3>
+<p><em>Are hotdogs sandwiches</em>? There are <a href="https://en.wikipedia.org/wiki/Weasel_word">many people</a> who say they are, including:</p>
+<p>Here's a <em>pretty good</em> function:</p>
+<pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">name</span>)</span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello "</span> + name;
+}
+</code></pre>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum dolor erat, in interdum mauris dictum eu. Aenean placerat justo ultricies luctus finibus. Nullam laoreet vulputate porttitor. Nunc ex turpis, dignissim eget mauris a, efficitur ornare purus. Donec consectetur sem vitae consectetur malesuada. Aenean commodo ligula vel nulla scelerisque faucibus. Aliquam sed enim vel mauris facilisis dictum in ut lorem. Vestibulum vel congue ex, sit amet eleifend ex. Proin sit amet leo vitae eros aliquet semper. Sed sed cursus elit, et mattis nulla. Morbi gravida, tortor id pharetra molestie, dolor dolor tincidunt sapien, a consectetur enim augue et ante. Curabitur at libero metus. Sed vitae quam sed massa accumsan vestibulum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum dolor erat, in interdum mauris dictum eu. Aenean placerat justo ultricies luctus finibus. Nullam laoreet vulputate porttitor. Nunc ex turpis, dignissim eget mauris a, efficitur ornare purus. Donec consectetur sem vitae consectetur malesuada. Aenean commodo ligula vel nulla scelerisque faucibus. Aliquam sed enim vel mauris facilisis dictum in ut lorem. Vestibulum vel congue ex, sit amet eleifend ex. Proin sit amet leo vitae eros aliquet semper. Sed sed cursus elit, et mattis nulla. Morbi gravida, tortor id pharetra molestie, dolor dolor tincidunt sapien, a consectetur enim augue et ante. Curabitur at libero metus. Sed vitae quam sed massa accumsan vestibulum.</p>
+</article></div><div class="footer">&copy; David Munro 2018</div></body></html>
